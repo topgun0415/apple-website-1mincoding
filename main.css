@@ -31,6 +31,7 @@ a {
   width: 100%;
   height: 44px;
   padding: 0 1rem;
+  z-index: 10;
 }
 
 .local-nav {
@@ -41,6 +42,7 @@ a {
   height: 52px;
   padding: 0 1rem;
   border-bottom: 1px solid #ddd;
+  z-index: 11;
 }
 
 .global-nav-links,
@@ -71,11 +73,13 @@ a {
 }
 
 .scroll-section {
-  border: red 3px solid;
   padding-top: 50vh;
 }
 
 #scroll-section-0 h1 {
+  position: relative;
+  z-index: 5;
+  top: -27vh;
   font-size: 4rem;
   text-align: center;
 }
@@ -84,6 +88,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  top: 35vh;
   margin: 5px 0;
   height: 3em;
   font-size: 2.5rem;
@@ -124,12 +129,23 @@ a {
 .desc-message {
   width: 50%;
   font-weight: bold;
+  opacity: 0;
 }
 
 .pin {
   width: 1px;
   height: 100px;
   background-color: rgb(29, 29, 31);
+}
+
+#scroll-section-2 .b {
+  top: 10%;
+  left: 40%;
+}
+
+#scroll-section-2 .c {
+  top: 10%;
+  left: 45%;
 }
 
 .mid-message {
@@ -163,7 +179,6 @@ a {
 .sticky-elem {
   display: none;
   position: fixed;
-  top: 0;
   left: 0;
   width: 100%;
 }
@@ -174,6 +189,19 @@ a {
 #show-scene-3 #scroll-section-3 .sticky-elem {
   display: block;
 }
+
+.sticky-elem-canvas {
+  top: 0;
+  height: 100%;
+}
+
+.sticky-elem-canvas canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+/* Media Query */
 
 @media (min-width: 1024px) {
   #scroll-section-0 h1 {
@@ -202,6 +230,16 @@ a {
   .desc-message {
     width: 20%;
   }
+
+  #scroll-section-2 .b {
+    top: 20%;
+    left: 53%;
+  }
+
+  #scroll-section-2 .c {
+    left: 55%;
+  }
+
   .mid-message {
     font-size: 4vw;
   }
